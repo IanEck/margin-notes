@@ -111,7 +111,7 @@ a {
   flex-direction: row;
   justify-content: flex-start;
   align-content: flex-start;
-  margin-top: 3em;
+  margin-top: 5em;
 }
 
 .margin {
@@ -153,8 +153,6 @@ a {
   padding: 4px 16px 16px 16px;
   position: absolute;
   z-index: 1000;
-  bottom: 125%;
-  left: 0%;
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -173,6 +171,7 @@ a {
 .citation:hover .citationContent {
   visibility: visible;
   opacity: 1;
+  transition: all .2s ease-in-out;
 }
 
 .citation a {
@@ -180,7 +179,7 @@ a {
 }
 
 /* Margin note box */
-.hover_bkgr_fricc{
+.note_content {
   background:rgba(0,0,0,.8);
   cursor:pointer;
   display:none;
@@ -194,7 +193,7 @@ a {
   z-index:10000;
 }
 
-.hover_bkgr_fricc > div {
+.note_content > div {
   background-color: #fff;
   box-shadow: 10px 10px 60px #555;
   display: inline-block;
@@ -207,6 +206,35 @@ a {
   border-radius: 1px;
   padding: 16px 5%;
 }
+
+.media_content {
+  background:rgba(0,0,0,.8);
+  cursor:pointer;
+  display:none;
+  justify-content: center;
+  align-items: center;
+  height:100%;
+  position:fixed;
+  text-align:center;
+  top:0;
+  width:50%;
+  z-index:10000;
+}
+
+.media_content > div {
+  background-color: #000;
+  box-shadow: 10px 10px 60px #555;
+  display: inline-block;
+  height: auto;
+  max-width: 551px;
+  min-height: 100px;
+  vertical-align: middle;
+  width: 60%;
+  position: relative;
+  border-radius: 1px;
+  padding: 16px 5%;
+}
+
 .popupCloseButton {
   cursor: pointer;
   display: inline-block;
@@ -231,18 +259,29 @@ a {
   font-weight: bold;
 }
 
-/* .margin-note:hover {
-  background-color: red;
-  box-shadow: 8px 8px 16px #fff, 
-            -8px -8px 16px #A3B1C6;
-} */
+.margin-note:hover {
+  transition: all .2s ease-in-out;
+  transform: scale(1.3); 
+}
+
+.media-note {
+  cursor: pointer;
+  font-size: 20px;
+  margin: 20px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.media-note:hover {
+  transition: all .2s ease-in-out;
+  transform: scale(1.3); 
+}
 
 .note .bg:hover{
   fill: #F6F4F3;
   fill-opacity: 1;
   -webkit-filter: drop-shadow(4px 4px 2px rgba(0,0,0,0.2));      
   filter: drop-shadow(4px 4px 2px rgba(0,0,0,0.2));
-  size:  
 }
 
 /* Popup box */
