@@ -1,8 +1,6 @@
 # margin-notes
 Ghost template for interactive journal
 
-//Post Code Injections
-
 Note modal
 ====================
 
