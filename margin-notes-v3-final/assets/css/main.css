@@ -464,14 +464,14 @@ body {
 
 .progressTriger,
 .marker {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     overflow: hidden;
     position: fixed;
     left: 50%;
     top: 295px;
-    margin-left: -20px;
+    margin-left: -16px;
     z-index: 9999;
     pointer-events: none;
 }
@@ -683,6 +683,7 @@ body {
     transition: .3s ease-in;
     cursor: pointer;
     margin-top: -12%;
+    background-color: #F6F4F3;
 }
 
 .margin-triger svg {
