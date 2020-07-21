@@ -1,0 +1,10 @@
+<div class="header d-flex align-items-center">
+    <div class="logo">
+        {{#if @site.logo}}
+            <a href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}"></a>
+        {{else}}
+            <a class="site-nav-logo" href="{{@site.url}}">{{@site.title}}</a>
+        {{/if}}
+    </div>
+    {{> "site-nav"}}
+</div>

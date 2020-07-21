@@ -1,0 +1,335 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+<nav class="nav-bar" id="nav-bar">
+    <div class="container clear">
+        {{> site-header}}
+        <div class="nav" id="nav">
+            <div class="label"></div>
+            <a href="#" data-menu="1" class="active">Latest</a>
+            <a href="#" data-menu="2">Best</a>
+        </div>
+        <div class="post-wrap" id="post-wrap">
+            <div class="post-items post-tab-items show item_1">
+                <div class="color-thief-output"></div>
+                {{> "loop"}}
+                <div class="loadmore">
+                    <a href="#">Load more</a>
+                </div>
+            </div>
+            {{#get "posts" filter="featured:true" limit="all" as |featured|}}
+            <div class="post-items post-tab-items item_2">
+                {{#foreach featured}}
+                <article class="post-card" data-id="#post_{{@number}}">
+                    {{#if feature_image}}
+                    <figure>
+                        <img srcset="{{img_url feature_image size="s"}} 300w,
+                                        {{img_url feature_image size="m"}} 600w,
+                                        {{img_url feature_image size="l"}} 1000w,
+                                        {{img_url feature_image size="xl"}} 2000w"
+                            sizes="(max-width: 1000px) 400px, 700px" src="{{img_url feature_image size="xl"}}"
+                            alt="{{title}}" />
+                    </figure>
+                    {{/if}}
+                    <div class="title-wrap d-flex">
+                        <h3><a href="{{url}}" class="link-text">{{title}}</a></h3>
+                        <div class="date ml-auto post-date">{{date format="MM/DD/YYYY"}}</div>
+                    </div>
+                    <h3 class="subtitle">{{excerpt}}</h3>
+                    {{#if tags}}
+                    <div class="tag-wrap">
+                        {{tags separator=""}}
+                    </div>
+                    {{/if}}
+                </article>
+                {{else}}
+                <p>Feature posts are not available.</p>
+                {{/foreach}}
+            </div>
+            {{/get}}
+        </div>
+    </div>
+</nav>
+<div class="contents d-flex">
+    <div class="changable-image ml-auto">
+        <div class="post-tab-items show item_1">
+            {{#foreach posts}}
+            <img src="{{img_url feature_image}}" alt="{{title}}" class="post_img" data-id="post_{{@number}}">
+            {{/foreach}}
+        </div>
+        <div class="post-tab-items item_2">
+            {{#get "posts" filter="featured:true" limit="all" as |featured|}}
+            {{#foreach featured}}
+            <img src="{{img_url feature_image}}" alt="{{title}}" class="post_img" data-id="post_{{@number}}">
+            {{else}}
+            <p>Feature posts img are not available. Please add feature post</p>
+            {{/foreach}}
+            {{/get}}
+        </div>
+    </div>
+</div>
+<div class="marker d-flex">
+    <div class="img-color-picker"></div>
+    <div class="white-static"></div>
+</div>
+<div class="progressBar"></div>
+
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+<script src="{{asset  "js/color-thief.umd.js"}}"></script>
+<script>
+
+    // NOTE: Scroll performance is poor in Safari
+    // - this appears to be due to the events firing much more slowly in Safari.
+    //   Dropping the scroll event and using only a raf loop results in smoother
+    //   scrolling but continuous processing even when not scrolling
+    $(document).ready(function () {
+
+        const simpleBar = new SimpleBar(document.getElementById('nav-bar'));
+        simpleBar.getScrollElement().addEventListener('scroll', function(){
+            // var eachFigure = $('.post-content-wrapper').find('.kg-image-card')
+            // console.log(eachFigure);
+        });
+
+        $(".loadmore > a").click(function(e){
+            $(this).hide();
+            e.preventDefault();
+            $(this).parents('.post-items').addClass("loadedAll").find('.post-card').show();
+        })
+
+        // ---------------------
+        // Color Thief code
+        
+        const colorThief = new ColorThief();
+        const img = document.querySelector('img');
+
+        if (img.complete) {
+            $('.post-card').on('mouseenter', function (event) {
+                var $this = $(this);
+                var $imageSection = $this;
+                var $targetimage = $imageSection.find('figure img');
+                showColorsForImage($targetimage, $imageSection);
+            });
+
+            var showColorsForImage = function($image, $imageParent) {
+                var image = $image[0];
+                var start = Date.now();
+                var color = colorThief.getColor(image);
+                var elapsedTimeForGetColor = Date.now() - start;
+                var r = color[0];
+                var g = color[1];
+                var b = color[2];
+                
+                //$imageParent.attr('data-color', r+','+g+','+b);
+
+               $(".img-color-picker").css({
+                    backgroundColor: "rgb("+r+','+g+','+b+")"
+                })
+            }
+
+
+        } else {
+            image.addEventListener('load', function () {
+                colorThief.getColor(img);
+            });
+        }
+        
+    });
+
+    
+    var imgContainer = $('.home-template .changable-image'),
+        img = $('.home-template .changable-image > .post-tab-items > img'),
+        navbar = $('.home-template .nav-bar'),
+        postCard = $('.post-card'),
+        progressBar = $('.progressBar'),
+        marKer = $('.home-template .marker');
+    $(function () {
+
+        // Custom scroll
+        //var simpleScrollBar = $('.nav-bar');
+        //new SimpleBar($('.nav-bar')[0]);
+        
+        var setFirstColor = $('.show').find('.post-card').attr('data-color');
+        var colorPicker = marKer.find('.img-color-picker');
+
+        TweenMax.to(colorPicker, .03, {
+            css: {
+                backgroundColor: '#' + setFirstColor
+            },
+            ease: Power1.easeInOut
+        })
+
+        // Image change on hover
+
+        var $post_item = $('.post-card'),
+            $post_img = $('.post_img'),
+            $post_first_img = $('.show .post_img').eq(0);
+
+        TweenMax.set($post_first_img, {
+            autoAlpha: 1
+        });
+
+        $post_item.each(function (i) {
+            var $this = $(this);
+            $this.on('mouseenter', function (e) {
+                var $thisPage = $('.post-tab-items > .post_img').eq(i);
+                TweenMax.to($thisPage, 1, {
+                    autoAlpha: 1
+                });
+                TweenMax.to($post_img.not($thisPage), 0.5, {
+                    autoAlpha: 0
+                }); // faster
+            })
+
+        })
+
+
+        // Move mark with post card position
+        if ($(window).width() > 1024) {
+            $(".nav-bar, .changable-image").mousemove(function (e) {
+                var masOverlay = $(".marker");
+                var height = masOverlay.innerHeight();
+                var newValueY = e.pageY - (height / 2);
+
+                TweenMax.to(masOverlay, 0.7, {
+                    top: newValueY,
+                    y: 0,
+                });
+            });
+        }
+
+        // Nav tab function
+        var tl = new TimelineMax();
+        $('.nav a').on('click', function (e) {
+            e.preventDefault();
+            var $label = $('.nav > .label');
+            var $this = $(this);
+            var el_width = $this.width();
+            var offset_left = $this.offset();
+            var initTabNum = $this.data('menu');
+            var $post_items = $('.post-tab-items');
+            var $show = $('.show');
+
+            function step_1() {
+                $post_items.removeClass('show');
+            }
+
+            function step_2() {
+                $('.item_' + initTabNum).addClass('show');
+
+                var $post_first_img = $('.item_' + initTabNum).find('.post_img:first-child');
+                TweenMax.set($post_first_img, {
+                    autoAlpha: 1
+                });
+
+                var setColor = $('.item_' + initTabNum).find('.post-card').attr('data-color');
+                var colorPicker = marKer.find('.img-color-picker');
+
+                TweenMax.to(colorPicker, .03, {
+                    css: {
+                        backgroundColor: '#' + setColor
+                    },
+                    ease: Power1.easeInOut
+                })
+            }
+
+            if (!tl.isActive()) {
+                tl.to($post_items, 0.3, {
+                        y: 100,
+                        ease: Linear.easeOut,
+                        onComplete: step_1
+                    })
+                    .fromTo($('.item_' + initTabNum), 0.35, {
+                        onStart: step_2,
+                        y: -100
+                    }, {
+                        y: 0,
+                        ease: Linear.easeOut,
+                        immediateRender: false
+                    })
+                //.to($post_items, 0, {y: 0, ease: Sine.easeOut})	
+                $label.offset({
+                    left: offset_left.left
+                }).css('width', el_width)
+                $('.nav a').removeClass('active');
+                $this.addClass('active');
+            }
+        })
+
+        var initSize = function () {
+            var start_element = $('.nav a:first-of-type');
+            var $label = $('.nav .label');
+            var initWidth = start_element.css('width')
+            $label.css('width', initWidth)
+        }
+        initSize()
+        // End nav tab
+
+    }); // End ready function
+
+    
+    var statusTracker;
+    var percentage = 0;
+
+    function checkStatus() {
+        percentage = percentage + 5;
+        TweenMax.to(progressBar, 0.5, {
+            css: {
+                height: percentage + '%'
+            },
+            ease: Power2.easeOut
+        });
+
+        if (percentage == 100) stop();
+    }
+
+    function startProgress() {
+        statusTracker = setInterval(checkStatus, 80);
+    }
+
+    function stop() {
+        clearInterval(statusTracker);
+    }
+
+
+    $(window).on('load', function () {
+        //$('body').addClass('loaded');
+
+        if ($(window).width() > 991) {
+            startProgress();
+        }
+
+        TweenMax.to(marKer, 2, {
+            css: {
+                opacity: 1,
+                visibility: 'visible'
+            },
+            delay: 3,
+            ease: Power3.easeOut
+        });
+
+        TweenMax.to(img, 2, {
+            scale: 1,
+            alpha: 1,
+            ease: Power3.easeOut
+        });
+
+        TweenMax.to(navbar, 1, {
+            x: 0,
+            delay: 2,
+            ease: Cubic.easeInOut
+        });
+
+        TweenMax.to(imgContainer, 1, {
+            css: {
+                width: 50 + '%'
+            },
+            delay: 2,
+            ease: Cubic.easeInOut
+        });
+    })
+
+</script>
+{{/contentFor}}

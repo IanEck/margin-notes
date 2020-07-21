@@ -1,0 +1,63 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+
+<nav class="nav-bar" id="nav-bar">
+    <div class="header-wrapper">
+        <div class="container clear">
+            {{> site-header}}
+        </div>
+    </div>
+    {{!-- Everything inside the #post tags pulls data from the post --}}
+    {{#post}}
+    <div class="container page-content-container clear">
+        <div class="page-content">
+            <div class="page-title">
+                <h1>{{title}}</h1>
+            </div>
+            {{#if feature_image}}
+            {{!-- This is a responsive image, it loads different sizes depending on device
+                https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
+            <img class="post-card-image post_img" srcset="{{img_url feature_image size="s"}} 300w,
+                {{img_url feature_image size="m"}} 600w,
+                {{img_url feature_image size="l"}} 1000w,
+                {{img_url feature_image size="xl"}} 2000w" sizes="(max-width: 1000px) 400px, 700px"
+                loading="lazy" src="{{img_url feature_image size="m"}}" alt="{{title}}" />
+            {{/if}}
+
+            <div class="post-content-wrapper">
+                <div class="contents-wrap">
+                    {{content}}
+                    {{!-- <div class="click-to-action">
+                        <a href="#" class="btn">Get my newsletter</a>
+                        <a href="#" class="social instagram"><img src="{{asset  "svg/instagram-icon.svg"}}" alt=""></a>
+                        <a href="#" class="social twitter"><img src="{{asset  "svg/twitter-icon.svg"}}" alt=""></a>
+                    </div> --}}
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="contents d-flex">
+    <div class="changable-image ml-auto">
+        {{#if feature_image}}
+        {{!-- This is a responsive image, it loads different sizes depending on device
+            https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
+        <img class="post-card-image post_img" srcset="{{img_url feature_image size="s"}} 300w,
+                        {{img_url feature_image size="m"}} 600w,
+                        {{img_url feature_image size="l"}} 1000w,
+                        {{img_url feature_image size="xl"}} 2000w" sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy" src="{{img_url feature_image size="m"}}" alt="{{title}}" />
+        {{/if}}
+        <div class="modal-wrap" id="modal-wrap">
+            <div class="modal-close"><span></span></div>
+            <div class="modal-inner d-flex">
+                <div class="modal-inner-content"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{/post}}
+

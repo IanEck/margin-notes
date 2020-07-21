@@ -1,0 +1,20 @@
+    {{#foreach posts}}
+    <article class="post-card {{post_class}}" data-id="#post_{{@number}}">
+        {{#if feature_image}}
+        <figure>
+            <img class="kg-width-wide" src="{{img_url feature_image}}" crossorigin="anonymous" alt="{{title}}">
+        </figure>
+        {{/if}}
+        <div class="title-wrap d-flex">
+            <h3><a href="{{url}}" class="link-text">{{title}}</a></h3>
+            <div class="date ml-auto post-date">{{date format="MM/DD/YYYY"}}</div>
+        </div>
+        <h3 class="subtitle">{{meta_title}}</h3>
+        {{#if tags}}
+        <div class="tag-wrap">
+            {{tags separator=""}}
+        </div>
+        {{/if}}
+    </article>
+    {{/foreach}}
+

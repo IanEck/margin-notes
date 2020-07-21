@@ -1,0 +1,250 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+<nav class="nav-bar" id="nav-bar">
+    <div class="header-wrapper">
+        <div class="container clear">
+            {{> site-header}}
+        </div>
+    </div>
+    {{!-- Everything inside the #post tags pulls data from the post --}}
+    {{#post}}
+    <div class="container post-content-container clear">
+        {{#if feature_image}}
+        {{!-- This is a responsive image, it loads different sizes depending on device
+            https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
+        <img class="post-card-image post_img" srcset="{{img_url feature_image size="s"}} 300w,
+                        {{img_url feature_image size="m"}} 600w,
+                        {{img_url feature_image size="l"}} 1000w,
+                        {{img_url feature_image size="xl"}} 2000w" sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy" src="{{img_url feature_image size="m"}}" alt="{{title}}" />
+        {{/if}}
+
+        <div class="post-lead d-flex">
+            <div>
+                <h1>{{title}}</h1>
+                <p>{{custom_excerpt}}</p>
+            </div>
+        </div>
+        <div class="post-content-wrapper">
+            {{!-- <div class="margin-triger-wrapper">
+                <a class="margin-triger margin-note" id="margin-note">
+                    <svg class="note" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle class="bg" cx="24" cy="24" r="16" fill="#F6F4F3" fill-opacity="0"/>
+                        <circle cx="16" cy="24" r="3" fill="#D14962"/>
+                        <circle cx="24" cy="24" r="3" fill="#D14962"/>
+                        <circle cx="32" cy="24" r="3" fill="#D14962"/>
+                    </svg>
+                </a>
+                <a class="margin-triger media-note" id="media-note">
+                    <svg class="note" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M32.5 23.634C33.1667 24.0189 33.1667 24.9811 32.5 25.366L19.75 32.7272C19.0833 
+                    33.1121 18.25 32.631 18.25 31.8612L18.25 17.1388C18.25 16.369 19.0833 15.8879 19.75 16.2728L32.5 23.634Z" 
+                    fill="#D14962"/>
+                    </svg>
+                </a>
+            </div> --}}
+            <div class="contents-wrap">
+                {{content}}
+            </div>
+
+            {{!-- <div class="modal-content-wrapper">
+                <div class="modal-content">
+                     note content
+                </div>
+                <div class="margin-triger-wrapper">
+                    <a class="margin-triger margin-note" id="margin-note">
+                        <svg class="note" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle class="bg" cx="24" cy="24" r="16" fill="#F6F4F3" fill-opacity="0"/>
+                            <circle cx="16" cy="24" r="3" fill="#D14962"/>
+                            <circle cx="24" cy="24" r="3" fill="#D14962"/>
+                            <circle cx="32" cy="24" r="3" fill="#D14962"/>
+                        </svg>
+                    </a>
+                </div>
+            </div> --}}
+        </div>
+    </div>
+</nav>
+<div class="contents d-flex">
+    <div class="changable-image ml-auto">
+        {{#if feature_image}}
+        {{!-- This is a responsive image, it loads different sizes depending on device
+            https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
+        <img class="post-card-image post_img" srcset="{{img_url feature_image size="s"}} 300w,
+                        {{img_url feature_image size="m"}} 600w,
+                        {{img_url feature_image size="l"}} 1000w,
+                        {{img_url feature_image size="xl"}} 2000w" sizes="(max-width: 1000px) 400px, 700px"
+            loading="lazy" src="{{img_url feature_image size="m"}}" alt="{{title}}" />
+        {{/if}}
+    </div>
+</div>
+{{!-- Loading Progress bar --}}
+<div class="progressTriger d-flex">
+    <div class="img-color-picker"></div>
+    <div class="white-static"></div>
+</div>
+
+<div class="sign-up-newsletter">
+    <div class="newsletter">
+        <div class="d-flex">
+            <img src="{{asset  "img/stuff-img.png"}}" alt="">
+            <h5>Want more stuff like this?</h5>
+        </div>
+        <div class="email-wrap d-flex">
+            <input type="email" placeholder="Email address">
+            <input type="submit" value="More stuff like this">
+        </div>
+    </div>
+</div>
+
+{{!-- Post modal --}}
+<div class="modal-wrap" id="modal-wrap">
+    <div class="modal-close"><span></span></div>
+    <div class="modal-inner d-flex">
+        <div class="modal-inner-content"></div>
+    </div>
+</div>
+{{/post}}
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+<script src="{{asset  "js/color-thief.umd.js"}}"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+    integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"
+    integrity="sha256-+9YNuItWuR4sbqeaNiJOxG0BvptYz4fbUXbIZoH5Jwo=" crossorigin="anonymous"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js'></script>
+<script>
+
+    // NOTE: Scroll performance is poor in Safari
+    // - this appears to be due to the events firing much more slowly in Safari.
+    //   Dropping the scroll event and using only a raf loop results in smoother
+    //   scrolling but continuous processing even when not scrolling
+    $(document).ready(function () {
+
+        var modal = $("#modal-wrap");
+        var modalInner = $(".modal-inner-content");
+        var newsLetterContent = $(".sign-up-newsletter").html();
+        //var modalContent = $(".modal-content").html();
+        // modalInner.html(modalContent);
+        //var modalMedia = $(".kg-embed-card").html();
+
+        $(".modal-content-wrapper").each(function () {
+            var noteTriger = $(this).find(".margin-triger.margin-note");
+            var mediaTriger = $(this).find(".margin-triger.media-note");
+            var modalContent = $(this).find(".modal-content").html();
+
+            noteTriger.click(function (e) {
+                $("body").addClass("modal-shown");
+                $(".margin-triger").removeClass('active');
+                $(this).addClass('active');
+                modalInner.removeClass('media').addClass('text');
+                e.preventDefault();
+                modal.fadeIn(function () {
+                    modalInner.html(modalContent);
+                });
+            });
+
+            mediaTriger.click(function (e) {
+                $("body").addClass("modal-shown");
+                $(".margin-triger").removeClass('active');
+                $(this).addClass('active');
+                modalInner.removeClass('text').addClass('media');
+                e.preventDefault();
+                modal.fadeIn(function () {
+                    modalInner.html(modalContent);
+                })
+            });
+        })
+
+        $('#modal-wrap').on('click', function () {
+            $(".margin-triger").removeClass('active');
+            $(this).fadeOut(function () {
+                $("body").removeClass("modal-shown");
+                modalInner.removeClass('text media');
+                modalInner.html('');
+            })
+        });
+
+        modalInner.click(function (e) {
+            e.stopPropagation();
+        })
+
+        $(window).scroll(function (event) {
+            var chapters = $('.kg-card.kg-image-card');
+            for (var i = 0; i < chapters.length; i++) {
+                handleScroll(chapters[i]);
+            }
+        });
+
+    // $(window).scroll();
+
+        //Handle setting the current section of the home page
+        function handleScroll(elem) {
+            if (isScrolledIntoView(elem) && !elem.classList.contains('current')) {
+                $('.kg-card.kg-image-card').removeClass('current');
+                $(elem).addClass('current');
+            }
+            var scrollPos = $(window).scrollTop();
+            var postLeadHeight = $(".post-lead").outerHeight();
+            var postLeadOffsetTop = $(".post-lead").offset().top;
+            if(scrollPos < postLeadOffsetTop){
+                $('.kg-card.kg-image-card').removeClass('current');
+            }
+        }
+
+        //Check if enough of the element is visible
+        //In this case, 1/2 of the element
+        function isScrolledIntoView(elem) {
+            var docViewTop = $(window).scrollTop(),
+                docViewBottom = docViewTop + $(window).height(),
+                elemHeight = $(elem).height(),
+                elemTop = $(elem).offset().top,
+                elemBottom = elemTop + elemHeight,
+                elemThreshold = elemHeight / 2;
+
+            return ((elemTop >= docViewTop) && ((docViewBottom - elemTop) >= elemThreshold)) ||
+                ((elemTop <= docViewTop) && ((elemBottom - docViewTop) >= elemThreshold));
+        }
+
+       var postsParentHeight = $(".post-content-wrapper").outerHeight();
+       var postStartPos = $(".post-content-wrapper").offset().top;
+       var postEndPos = (postsParentHeight + postStartPos) - $(window).height();
+
+        $(window).on("scroll", function(){
+            var scrollPos = $(window).scrollTop();
+            //console.log(scrollPos)
+            if(scrollPos >= postEndPos){
+                $("body").addClass("modal-shown");
+                modalInner.html(newsLetterContent);
+                modal.fadeIn()
+            }
+        });
+
+        /* $(window).on('scroll', function() { 
+            if ($(window).scrollTop() >= ) { 
+                
+                alert('You reached the end of the DIV'); 
+            } 
+        }); */ 
+
+    }); // End ready function
+
+    // When the user scrolls the page, execute myFunction 
+    window.onscroll = function() {myFunction()};
+
+    function myFunction() {
+        var scrollTriger = document.getElementsByClassName("progressTriger")[0];
+        var scrollTrigerHeight = scrollTriger.clientHeight;
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementsByClassName("progressTriger")[0].style.top = scrolled  + "%";
+    }
+</script>
+{{/contentFor}}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset "css/simplebar.css"}}">
+    <link rel="stylesheet" href="{{asset "css/main.css"}}">
+
+    <title>{{meta_title}}</title>
+
+    {{!-- Styles'n'Scripts --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    {{!-- This tag outputs SEO meta+structured data and other important settings --}}
+    {{ghost_head}}
+</head>
+
+<body class="{{body_class}}">
+    <div class="main d-flex">
+        {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+        {{{body}}}
+    </div>
+
+    <script src="{{asset  "js/jquery-3.5.1.min.js"}}"></script>
+    <script src="{{asset  "js/TweenMax.min.js"}}"></script>
+    <script src="{{asset  "js/simplebar.js"}}"></script>
+    <script src="{{asset  "js/main.js"}}"></script>
+
+    {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
+    {{{block "scripts"}}}
+    
+    {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
+    {{ghost_foot}}
+</body>
+
+</html>
