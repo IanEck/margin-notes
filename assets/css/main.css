@@ -359,6 +359,15 @@ body {
     font-weight: normal;
 }
 
+.about-nav {
+    width: 34px;
+}
+
+.about:hover {
+    fill: #D14962;
+    opacity: 1;
+}
+
 .selected-tag,
 .tag-wrap a {
     background-color: #F6F4F3;
@@ -693,6 +702,10 @@ body {
 
 .margin-triger:hover {
     background-color: #F6F4F3;
+    -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transform: translate(0, -2px);
 }
 
 .margin-triger.active,
@@ -1037,9 +1050,9 @@ blockquote{
 }
 
 blockquote:hover{
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 /* blockquote::before,
