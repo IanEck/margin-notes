@@ -772,7 +772,7 @@ body {
 }
 
 .post-lead {
-    height: calc(100vh - 95px);
+    height: 100vh;
     align-items: center;
 }
 
@@ -944,6 +944,7 @@ figure.kg-card.kg-image-card .kg-image {
     -ms-transition: opacity 0.3s ease-out;
     -o-transition: opacity 0.3s ease-out;
     transition: opacity 0.3s ease-out;
+    background-color: #ffffff;
 }
 
 figure.kg-card.kg-image-card.current .kg-image {
@@ -1047,12 +1048,38 @@ blockquote{
     -ms-transition: all .3s;
     transition: all .3s;
     display: inline-block;
+    margin-top: 2em;
+    font-style: normal;
 }
 
 blockquote:hover{
     -webkit-box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+blockquote a{
+    padding-right: 34px;
+    background-image: url(../svg/open_in_new.svg);
+    background-position: right center;
+    background-repeat: no-repeat;
+    color: rgb(0 0 0 / .5);
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    font-size: 16px;
+    font-family: 'knockouthtf51-middleweight';
+    font-weight: normal;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all .3s ease-in;
+    -ms-transition: all .3s ease-in;
+    transition: all .3s ease-in;
+}
+
+blockquote:hover a{
+    opacity: 1;
+    visibility: visible;
 }
 
 /* blockquote::before,
@@ -1831,6 +1858,10 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img{
     .slide-content{
         padding-left: 30px;
         padding-right: 30px;
+    }
+
+    blockquote a{
+        display: none;
     }
 }
 

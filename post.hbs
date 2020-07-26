@@ -216,22 +216,30 @@ into the {body} of the default.hbs template --}}
        var postStartPos = $(".post-content-wrapper").offset().top;
        var postEndPos = (postsParentHeight + postStartPos) - $(window).height();
 
-        $(window).on("scroll", function(){
-            var scrollPos = $(window).scrollTop();
-            //console.log(scrollPos)
-            if(scrollPos >= postEndPos){
-                $("body").addClass("modal-shown");
-                modalInner.html(newsLetterContent);
-                modal.fadeIn()
-            }
-        });
+        var position = $(window).scrollTop(),
+            window_height = $(window).height();
 
-        /* $(window).on('scroll', function() { 
-            if ($(window).scrollTop() >= ) { 
-                
-                alert('You reached the end of the DIV'); 
-            } 
-        }); */ 
+        // should start at 0
+        $(window).scroll(function () {
+            var scroll = $(window).scrollTop();
+            if (scroll > position) {
+                //console.log('scrollDown');
+
+                if (scroll >= postEndPos ) {
+                    $("body").addClass("modal-shown");
+                    modalInner.html(newsLetterContent);
+                    modal.fadeIn()
+                }
+
+
+            } else {
+                if (scroll <= postStartPos - $(window).height() ) {
+                    $('.kg-card.kg-image-card').removeClass('current');                    
+                }
+                //console.log('scrollUp');
+            }
+            position = scroll;
+        });
 
     }); // End ready function
 

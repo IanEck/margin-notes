@@ -35,5 +35,8 @@
 
     $(window).on('load', function () {
         $('body').addClass('loaded');
+        if($(window).width() > 767){
+            $(".post-template blockquote a").attr("target", "_blank");
+        }
     });
 })(jQuery);
