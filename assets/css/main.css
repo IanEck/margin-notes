@@ -1444,6 +1444,7 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img{
     padding: 0 20px;
     background-color: #D14962;
     color: #ffffff;
+    cursor: pointer;
 }
 
 .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{

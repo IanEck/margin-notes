@@ -23,7 +23,7 @@
     allLink.forEach(function(link, index){
         $.get(`${link}`, function(resp) {
             var title = resp.title;
-            var content = resp.description;
+            var content = $(".citation").eq(index).find("a").data('content') //resp.description;
             
             if(content !== undefined){
                 //console.log(content)
