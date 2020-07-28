@@ -981,8 +981,6 @@ figure.kg-card.kg-image-card.current .kg-image {
 }
 
 .page-about .changable-image img{
-    width: 374px;
-    height: 455px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -1012,10 +1010,31 @@ background: linear-gradient(to left, rgba(255,254,252,1) 0%, rgba(242,239,240,1)
     -ms-flex-flow: row wrap;
     flex-flow: row wrap;
     min-height: 100vh;
+    margin-top: 16vh;
 }
 
 .page-content-container .post-card-image{
     display: none;
+}
+
+.page-content h1{
+    font-family: 'Knockout-HTF28-JuniorFeatherwt';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 72px;
+    margin-bottom: .5em;
+    line-height: 1;
+
+}
+
+.page-content h2{
+    font-family: 'Knockout-HTF28-JuniorFeatherwt';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 40px;
+    margin-bottom: .5em;
+    line-height: 1;
+
 }
 
 .click-to-action{
@@ -1695,7 +1714,7 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img{
     }
 
     .page-content{
-        padding-top: 50px;
+        padding-top: 20vh;
     }
 
     .page-content-container .post-card-image{
