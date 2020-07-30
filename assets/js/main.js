@@ -23,7 +23,7 @@
     allLink.forEach(function(link, index){
         $.get(`${link}`, function(resp) {
             var title = resp.title;
-            var content = resp.description;
+            var content = $(".citation").eq(index).find("a").data('content') //resp.description;
             
             if(content !== undefined){
                 //console.log(content)
@@ -35,5 +35,8 @@
 
     $(window).on('load', function () {
         $('body').addClass('loaded');
+        if($(window).width() > 767){
+            $(".post-template blockquote a").attr("target", "_blank");
+        }
     });
 })(jQuery);
