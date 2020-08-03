@@ -373,7 +373,7 @@ body {
     background-color: #F6F4F3;
     height: 32px;
     line-height: 32px;
-    font-size: 14px;
+    font-size: 0.875rem;
     text-align: center;
     padding: 0 12px;
     margin-right: 8px;
@@ -449,7 +449,7 @@ body {
 }
 
 .nav a {
-    font-size: 22px;
+    font-size: 1.375rem;
     position: relative;
     padding-bottom: 10px;
     margin-right: 25px;
@@ -467,7 +467,7 @@ body {
 }
 
 .date {
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 20px;
 }
 
@@ -777,12 +777,12 @@ body {
 }
 
 .post-lead h1 {
-    font-size: 72px;
+    font-size: 4.5rem;
     margin-bottom: .5em;
     line-height: 1;
 }
 .post-lead p{
-    font-size: 22px;
+    font-size: 1.375rem;
     font-style: italic;
 }
 
@@ -816,7 +816,7 @@ body {
     background-color: #ffffff;
     padding: 40px 33px 35px;
     border-top: 4px solid #D14962;
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 24px;
     color: #000000;
     -webkit-transition: all .3s ease-in;
@@ -1022,7 +1022,7 @@ background: linear-gradient(to left, rgba(255,254,252,1) 0%, rgba(242,239,240,1)
     font-family: 'Knockout-HTF28-JuniorFeatherwt';
     font-weight: normal;
     font-style: normal;
-    font-size: 72px;
+    font-size: 4.5rem;
     margin-bottom: .5em;
     line-height: 1;
 
@@ -1032,7 +1032,7 @@ background: linear-gradient(to left, rgba(255,254,252,1) 0%, rgba(242,239,240,1)
     font-family: 'Knockout-HTF28-JuniorFeatherwt';
     font-weight: normal;
     font-style: normal;
-    font-size: 40px;
+    font-size: 2.5rem;
     margin-bottom: .5em;
     line-height: 1;
 
@@ -1052,8 +1052,18 @@ background: linear-gradient(to left, rgba(255,254,252,1) 0%, rgba(242,239,240,1)
     padding: 0 20px;
     height: 40px;
     line-height: 38px;
-    font-size: 16px;
+    font-size: 1rem;
     color: #D14962;
+    font-family: 'knockouthtf51-middleweight';
+    border: none;
+}
+
+.inpt{
+    padding: 0 8px;
+    height: 40px;
+    margin-right: 0px;
+    line-height: 38px;
+    font-size: 1rem;
     font-family: 'knockouthtf51-middleweight';
 }
 
@@ -1086,7 +1096,7 @@ blockquote a{
     position: absolute;
     right: 16px;
     bottom: 16px;
-    font-size: 16px;
+    font-size: 1rem;
     font-family: 'knockouthtf51-middleweight';
     font-weight: normal;
     opacity: 0;
@@ -1207,7 +1217,7 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img{
 
 .loadmore a{
     color: #D14962;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-family: 'knockouthtf51-middleweight';
 }
 
@@ -1323,7 +1333,7 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img{
     min-height: calc(100vh - 50px);
     align-items: center;
     /* padding: 120px 0; */
-    font-size: 26px;
+    font-size: 1.625rem;
 }
 
 .slide-thumb img {
@@ -1398,7 +1408,7 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img{
 }
 
 .slide-title h3{
-    font-size: 50px;
+    font-size: 3.125rem;
     font-family: 'Grouch BT';
     font-weight: normal;
 }
@@ -1424,7 +1434,7 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img{
 
 .newsletter h5{
     width: calc(100% - 130px);
-    font-size: 22px;
+    font-size: 1.375rem;
     font-family: 'Source Serif Pro', serif;
     font-style: italic;
     font-weight: normal;
@@ -1443,7 +1453,7 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img{
     outline: none;
     height: 40px;
     font-family: 'Knockout-HTF28-JuniorFeatherwt';
-    font-size: 16px;
+    font-size: 1rem;
     width: 50%;
 }
 
@@ -1544,7 +1554,7 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img{
 }
 
 .tag-header h5{
-    font-size: 22px;
+    font-size: 1.375rem;
     color: #D14962;
     margin-right: 10px;
 }
@@ -1571,12 +1581,12 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img{
     body,
     h3,
     .nav a {
-        font-size: 16px;
+        font-size: 1rem;
     }
 
     .tag-wrap a,
     .date {
-        font-size: 10px;
+        font-size: 0.625rem;
     }
 
     .nav a {
@@ -1603,12 +1613,12 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img{
 
     h3,
     .nav a {
-        font-size: 22px;
+        font-size: 1.375rem;
     }
 
     .tag-wrap a,
     .date {
-        font-size: 14px;
+        font-size: 0.875rem;
     }
 
     .nav-bar {
@@ -1663,7 +1673,7 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img{
 
     .post-lead h1 {
         margin-bottom: 30px;
-        font-size: 45px;
+        font-size: 2.813rem;
     }
 
     .margin-triger {
@@ -1905,12 +1915,12 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img{
     body,
     h3,
     .nav a {
-        font-size: 16px;
+        font-size: 1rem;
     }
 
     .tag-wrap a,
     .date {
-        font-size: 10px;
+        font-size: 0.625rem;
     }
 
     .header,
@@ -1970,8 +1980,7 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img{
 
 @media only screen and (min-width: 1200px) {
     body {
-        /* font-size: 18px; */
-        font-size: 20px;
+        font-size: 1.25rem;
         line-height: 1.5em;
     }
 
@@ -1981,7 +1990,7 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img{
 
     .tag-wrap a,
     .date {
-        font-size: 14px;
+        font-size: 0.875rem;
     }
 
     .container {
