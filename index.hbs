@@ -275,7 +275,7 @@ into the {body} of the default.hbs template --}}
 
     function checkStatus() {
         percentage = percentage + 5;
-        TweenMax.to(progressBar, 0.5, {
+        TweenMax.to(progressBar, 0.3, {
             css: {
                 height: percentage + '%'
             },
@@ -286,7 +286,7 @@ into the {body} of the default.hbs template --}}
     }
 
     function startProgress() {
-        statusTracker = setInterval(checkStatus, 80);
+        statusTracker = setInterval(checkStatus, 30);
     }
 
     function stop() {
@@ -306,11 +306,11 @@ into the {body} of the default.hbs template --}}
                 opacity: 1,
                 visibility: 'visible'
             },
-            delay: 3,
+            delay: 2,
             ease: Power3.easeOut
         });
 
-        TweenMax.to(img, 2, {
+        TweenMax.to(img, 1, {
             scale: 1,
             alpha: 1,
             ease: Power3.easeOut
@@ -318,7 +318,7 @@ into the {body} of the default.hbs template --}}
 
         TweenMax.to(navbar, 1, {
             x: 0,
-            delay: 2,
+            delay: 1,
             ease: Cubic.easeInOut
         });
 
@@ -326,7 +326,7 @@ into the {body} of the default.hbs template --}}
             css: {
                 width: 50 + '%'
             },
-            delay: 2,
+            delay: 1,
             ease: Cubic.easeInOut
         });
     })

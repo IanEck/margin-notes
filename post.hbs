@@ -88,13 +88,18 @@ into the {body} of the default.hbs template --}}
 
 <div class="sign-up-newsletter">
     <div class="newsletter">
-        <div class="d-flex">
-            <img src="{{asset  "img/stuff-img.png"}}" alt="">
-            <h5>Want more stuff like this?</h5>
-        </div>
-        <div class="email-wrap d-flex">
-            <input type="email" placeholder="Email address">
-            <input type="submit" value="More stuff like this">
+        <h5>Want more stuff like this?</h5>
+        <form id="newsletter-form" action="https://formspree.io/mnqgraln" method="POST">
+            <div class="email-wrap d-flex">
+                <input type="email" name="newsletter-email" placeholder="Email address">
+                <input type="submit" id="my-form-button" value="Get my newsletter">
+                <p id="my-form-status"></p>
+            </div>
+        </form>
+        <div class="click-to-action">
+            <a href="#" class="social instagram"><img src="../assets/svg/instagram-icon.svg" alt="instagram"></a>
+            <a href="#" class="social twitter"><img src="../assets/svg/twitter-icon.svg" alt="Twitter"></a>
+            <a href="#" class="social medium"><img src="../assets/svg/medium-icon.svg" alt="Medium"></a>
         </div>
     </div>
 </div>

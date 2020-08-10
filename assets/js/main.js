@@ -2,34 +2,30 @@
 
     //citations
     'use strict';
-    let weatherUrl = "http://api.openweathermap.org/data/2.5/weather?q=";
-    let apiKey = "4ade206763c0f24a2dcbe10b1d355375";    
     let allText = [];
-    let allLink = [];
 
     $(".citation").each(function(){
         $(this).find('a').attr('target', '_blank');
-        var text = $(this).find('a i').html().replace(/ /g,"_");
+        var text = $(this).find('a').html().replace(/ /g,"_");
         allText.push(text);
     });
 
     allText.forEach(function(item, index){
-        //console.log(item)
-        let wikiUrl = "https://en.wikipedia.org/api/rest_v1/page/summary/"+item;
+        //console.log(item)     
 
-        allLink.push(wikiUrl);       
-    });
+        var content = $(".citation").eq(index).find("a").data("content"); //resp.description;
+        var title = $(".citation").eq(index).find("a").data("title"); //resp.description;
 
-    allLink.forEach(function(link, index){
-        $.get(`${link}`, function(resp) {
-            var title = resp.title;
-            var content = $(".citation").eq(index).find("a").data('content') //resp.description;
-            
-            if(content !== undefined){
-                //console.log(content)
-                $( ".citation").eq(index).append("<div class='citationContent'><div class='heading d-flex'><h3>"+title+"</h3><img class='wiki-logo' src='../assets/svg/wiki-logo.svg' alt='Wiki logo' /><i>Wikipedia</i></div>" +content+ "</div>").addClass('content-added');
-            }
-        })
+        if (content !== undefined || content !== undefined) {
+          //console.log(content)
+          $(".citation").eq(index).append(
+              "<div class='citationContent'><div class='heading d-flex'><h3>" +
+                title +
+                "</h3><img class='wiki-logo' src='../assets/svg/wiki-logo.svg' alt='Wiki logo' /><i>Wikipedia</i></div>" +
+                content +
+                "</div>"
+            ).addClass("content-added");
+        }
 
     });
 
@@ -40,3 +36,48 @@
         }
     });
 })(jQuery);
+
+window.addEventListener("DOMContentLoaded", function () {
+  // get the form elements defined in your form HTML above
+
+  var form = document.getElementById("newsletter-form");
+  var button = document.getElementById("my-form-button");
+  var status = document.getElementById("my-form-status");
+
+  // Success and Error functions for after the form is submitted
+
+  function success() {
+    form.reset();
+    button.style = "pointer-event: none";
+    status.innerHTML = "Thanks!";
+  }
+
+  function error() {
+    status.innerHTML = "Oops! There was a problem.";
+  }
+
+  // handle the form submission event
+
+  form.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var data = new FormData(form);
+    ajax(form.method, form.action, data, success, error);
+  });
+});
+
+// helper function for sending an AJAX request
+
+function ajax(method, url, data, success, error) {
+  var xhr = new XMLHttpRequest();
+  xhr.open(method, url);
+  xhr.setRequestHeader("Accept", "application/json");
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState !== XMLHttpRequest.DONE) return;
+    if (xhr.status === 200) {
+      success(xhr.response, xhr.responseType);
+    } else {
+      error(xhr.status, xhr.response, xhr.responseType);
+    }
+  };
+  xhr.send(data);
+}
