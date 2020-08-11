@@ -469,6 +469,7 @@ body {
 .date {
     font-size: 14px;
     line-height: 20px;
+    margin-top: 4px;
 }
 
 .progressTriger,
@@ -622,7 +623,9 @@ body {
 
 .subtitle {
     margin-top: 20px;
-    font-style: italic;
+    /* font-style: italic; */
+    font-size: 1.125rem;
+    color: rgba(0,0,0,0.8);
 }
 
 .tag-wrap {
@@ -818,7 +821,7 @@ body {
     background-color: #ffffff;
     padding: 40px 33px 35px;
     border-top: 4px solid #D14962;
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 24px;
     color: #000000;
     -webkit-transition: all .3s ease-in;
@@ -1072,7 +1075,7 @@ blockquote a {
     position: absolute;
     right: 16px;
     bottom: 16px;
-    font-size: 16px;
+    font-size: 1.125rem;
     font-family: 'knockouthtf51-middleweight';
     font-weight: normal;
     opacity: 0;
@@ -1193,7 +1196,7 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
 
 .loadmore a {
     color: #D14962;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-family: 'knockouthtf51-middleweight';
 }
 
@@ -1598,12 +1601,12 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
     body,
     h3,
     .nav a {
-        font-size: 16px;
+        font-size: 1.125rem;
     }
 
     .tag-wrap a,
     .date {
-        font-size: 10px;
+        font-size: 0.625rem;
     }
 
     .nav a {
@@ -1630,7 +1633,7 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
 
     h3,
     .nav a {
-        font-size: 22px;
+        font-size: 1.5rem;
     }
 
     .tag-wrap a,
@@ -1926,7 +1929,7 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
     .newsletter h5{
         width: 100%;
         margin-top: 15px;
-        font-size: 18px
+        font-size: 1.125rem;
     }
     .email-wrap input{
         width: 100%;
@@ -1957,14 +1960,17 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
 @media only screen and (max-width: 420px) {
 
     body,
-    h3,
     .nav a {
-        font-size: 16px;
+        font-size: 1.125rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
     }
 
     .tag-wrap a,
     .date {
-        font-size: 10px;
+        font-size: 0.75rem;
     }
 
     .header,
@@ -2025,17 +2031,17 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
 @media only screen and (min-width: 1200px) {
     body {
         /* font-size: 18px; */
-        font-size: 20px;
+        font-size: 1.25rem;
         line-height: 1.5em;
     }
 
     h3 {
-        font-size: 22px;
+        font-size: 1.5rem;
     }
 
     .tag-wrap a,
     .date {
-        font-size: 14px;
+        font-size: 0.875rem;
     }
 
     .container {
