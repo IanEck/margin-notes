@@ -920,6 +920,7 @@ body {
 .wiki-logo {
     margin-left: auto;
     margin-right: 5px;
+    max-width: 24px;
 }
 
 .post-figures img {

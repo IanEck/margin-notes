@@ -13,15 +13,17 @@
     allText.forEach(function(item, index){
         //console.log(item)     
 
-        var content = $(".citation").eq(index).find("a").data("content"); //resp.description;
-        var title = $(".citation").eq(index).find("a").data("title"); //resp.description;
+        var content = $(".citation").eq(index).find("a").data("content");
+        var title = $(".citation").eq(index).find("a").data("title"); 
+        var wikiFavicon = $(".citation").eq(index).find("a").data("wiki-favicon");       
+        var wikiTitle = $(".citation").eq(index).find("a").data("wiki-title");       
 
         if (content !== undefined || content !== undefined) {
           //console.log(content)
           $(".citation").eq(index).append(
               "<div class='citationContent'><div class='heading d-flex'><h3>" +
                 title +
-                "</h3><img class='wiki-logo' src='../assets/svg/wiki-logo.svg' alt='Wiki logo' /><i>Wikipedia</i></div>" +
+          `</h3><img class='wiki-logo' src='${wikiFavicon}' alt='Wiki logo' /><i>${wikiTitle}</i></div>` +
                 content +
                 "</div>"
             ).addClass("content-added");
