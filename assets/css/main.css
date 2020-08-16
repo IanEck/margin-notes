@@ -425,9 +425,20 @@ body {
 
 .title-wrap h3 a {
     position: relative;
+
+    background-image: linear-gradient(120deg, #D14962 0%, #D14962 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in, color 0.25s ease-in;
 }
 
-.title-wrap h3 a::after {
+.title-wrap h3:hover a{
+    background-size: 100% 88%;
+    color: #ffffff;
+}
+
+/* .title-wrap h3 a::after {
     content: "";
     left: 0;
     bottom: 0;
@@ -440,9 +451,11 @@ body {
     background-color: currentColor;
 }
 
+
+
 .title-wrap h3:hover a::after {
     width: 100%;
-}
+} */
 
 .nav {
     position: relative;
@@ -469,7 +482,6 @@ body {
 .date {
     font-size: 14px;
     line-height: 20px;
-    margin-top: 4px;
 }
 
 .progressTriger,
@@ -623,9 +635,7 @@ body {
 
 .subtitle {
     margin-top: 20px;
-    /* font-style: italic; */
-    font-size: 1.125rem;
-    color: rgba(0,0,0,0.8);
+    font-style: italic;
 }
 
 .tag-wrap {
@@ -821,7 +831,7 @@ body {
     background-color: #ffffff;
     padding: 40px 33px 35px;
     border-top: 4px solid #D14962;
-    font-size: 1.125rem;
+    font-size: 18px;
     line-height: 24px;
     color: #000000;
     -webkit-transition: all .3s ease-in;
@@ -1076,7 +1086,7 @@ blockquote a {
     position: absolute;
     right: 16px;
     bottom: 16px;
-    font-size: 1.125rem;
+    font-size: 16px;
     font-family: 'knockouthtf51-middleweight';
     font-weight: normal;
     opacity: 0;
@@ -1197,7 +1207,7 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
 
 .loadmore a {
     color: #D14962;
-    font-size: 1.125rem;
+    font-size: 18px;
     font-family: 'knockouthtf51-middleweight';
 }
 
@@ -1602,12 +1612,12 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
     body,
     h3,
     .nav a {
-        font-size: 1.125rem;
+        font-size: 16px;
     }
 
     .tag-wrap a,
     .date {
-        font-size: 0.625rem;
+        font-size: 10px;
     }
 
     .nav a {
@@ -1634,7 +1644,7 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
 
     h3,
     .nav a {
-        font-size: 1.5rem;
+        font-size: 22px;
     }
 
     .tag-wrap a,
@@ -1930,7 +1940,7 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
     .newsletter h5{
         width: 100%;
         margin-top: 15px;
-        font-size: 1.125rem;
+        font-size: 18px
     }
     .email-wrap input{
         width: 100%;
@@ -1961,17 +1971,14 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
 @media only screen and (max-width: 420px) {
 
     body,
+    h3,
     .nav a {
-        font-size: 1.125rem;
-    }
-
-    h3 {
-        font-size: 1.5rem;
+        font-size: 16px;
     }
 
     .tag-wrap a,
     .date {
-        font-size: 0.75rem;
+        font-size: 10px;
     }
 
     .header,
@@ -2032,17 +2039,17 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
 @media only screen and (min-width: 1200px) {
     body {
         /* font-size: 18px; */
-        font-size: 1.25rem;
+        font-size: 20px;
         line-height: 1.5em;
     }
 
     h3 {
-        font-size: 1.5rem;
+        font-size: 22px;
     }
 
     .tag-wrap a,
     .date {
-        font-size: 0.875rem;
+        font-size: 14px;
     }
 
     .container {

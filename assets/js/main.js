@@ -18,12 +18,15 @@
         var wikiFavicon = $(".citation").eq(index).find("a").data("wiki-favicon");       
         var wikiTitle = $(".citation").eq(index).find("a").data("wiki-title");       
 
-        if (content !== undefined || content !== undefined) {
+        var wikiIcon = wikiFavicon ? `<img class='wiki-logo' src='${wikiFavicon}' alt='Wiki logo' />` : '';
+        var wtitle = wikiTitle ? `<i>${wikiTitle}</i>` : '';
+
+        if (content !== undefined || content !== ' ') {
           //console.log(content)
           $(".citation").eq(index).append(
               "<div class='citationContent'><div class='heading d-flex'><h3>" +
                 title +
-          `</h3><img class='wiki-logo' src='${wikiFavicon}' alt='Wiki logo' /><i>${wikiTitle}</i></div>` +
+          "</h3>" + wikiIcon + wtitle + "</div>" +
                 content +
                 "</div>"
             ).addClass("content-added");
