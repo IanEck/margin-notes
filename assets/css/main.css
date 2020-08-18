@@ -423,17 +423,16 @@ body {
     width: calc(100% - 80px);
 }
 
-.title-wrap h3 a {
+.title-wrap h3 a span{
     position: relative;
-
     background-image: linear-gradient(120deg, #D14962 0%, #D14962 100%);
-  background-repeat: no-repeat;
-  background-size: 100% 0;
-  background-position: 0 88%;
-  transition: background-size 0.25s ease-in, color 0.25s ease-in;
+    background-repeat: no-repeat;
+    background-size: 100% 0;
+    background-position: 0 88%;
+    transition: background-size 0.25s ease-in, color 0.25s ease-in;
 }
 
-.title-wrap h3:hover a{
+.title-wrap h3:hover a span{
     background-size: 100% 88%;
     color: #ffffff;
 }
@@ -1001,7 +1000,12 @@ figure.kg-card.kg-image-card.current .kg-image {
 .modal-close span::before {
     transform: rotate(-45deg);
 }
-
+.page-about .page-content {
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
 .page-about .changable-image img {
     /* width: 374px;
     height: 455px; */
@@ -1013,14 +1017,20 @@ figure.kg-card.kg-image-card.current .kg-image {
 .page-about .changable-image {
     /* background: rgb(255,254,252);
 background: linear-gradient(0deg, rgba(255,254,252,1) 0%, rgba(242,239,240,1) 100%); */
-    background: linear-gradient(to left, rgba(255, 254, 252, 1) 0%, rgba(242, 239, 240, 1) 100%)
+    /* background: linear-gradient(to left, rgba(255, 254, 252, 1) 0%, rgba(242, 239, 240, 1) 100%) */
 }
 
 .page-about .post-lead {
     height: auto;
     display: block;
 }
-
+.page-about .page-title h1{
+    font-family: 'Knockout-HTF28-JuniorFeatherwt';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 72px;
+    line-height: 1;
+}
 .page-content-container {
     padding-top: 105px;
     display: -webkit-box;
@@ -1435,7 +1445,9 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
     font-style: italic;
     font-weight: normal;
 }
-
+.newsletter form {
+    display: flex;
+}
 .email-wrap {
     width: 100%;
     margin-top: 30px;
@@ -1669,7 +1681,9 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
         max-width: 580px;
         padding: 0 30px;
     }
-
+    .page-about .page-content {
+        max-width: 520px;
+    }
     .post-card figure {
         display: block;
         margin-bottom: 30px;
@@ -1845,14 +1859,6 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
         padding-bottom: 50px;
     }
 
-}
-
-@media only screen and (max-width: 767px) {
-
-    .page-title {
-        padding: 0 30px;
-    }
-
     .click-to-action {
         text-align: center;
     }
@@ -1865,6 +1871,14 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
 
     .click-to-action a {
         margin: 0 15px;
+    }
+
+}
+
+@media only screen and (max-width: 767px) {
+
+    .page-title {
+        padding: 0 30px;
     }
 
     .page-content-container {
@@ -2040,6 +2054,9 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
     .container {
         max-width: 470px;
     }
+    .page-about .page-content {
+        max-width: 406px;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -2061,7 +2078,9 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
     .container {
         max-width: 520px;
     }
-
+    .page-about .page-content {
+        max-width: 456px;
+    }
 }
 
 @media only screen and (min-width: 1440px) {
@@ -2071,7 +2090,9 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
         max-width: 620px;
         padding: 0 32px;
     }
-
+    .page-about .page-content {
+        max-width: 556px;
+    }
     .tag-template .site-archive-header>.tag-header {
         padding-top: 55px;
     }
