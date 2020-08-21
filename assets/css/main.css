@@ -352,6 +352,10 @@ body {
 
 
 /* Global style */
+.main {
+    background: linear-gradient(180deg, #FDFDFC 9.78%, #F9F5F3 88.51%);
+}
+
 .tag-wrap a,
 .nav a,
 .date {
@@ -434,13 +438,23 @@ body {
     background-size: 100% 0;
     background-position: 0 88%;
     transition: background-size 0.25s ease-in-out;
+    color: #111112;
+}
+
+/*.title-wrap h3:hover a span{
+    background-size: 100% 26%;
+    /* color: #ffffff;
+} */
+
+.post-card:hover .title-wrap h3 a span { 
+    background-size: 100% 26%; 
     color: #000000;
 }
 
-.title-wrap h3:hover a span{
-    background-size: 100% 26%;
-    /* color: #ffffff; */
+.post-card:hover .subtitle  { 
+    color: #1f1f20;
 }
+
 
 /* .title-wrap h3 a::after {
     content: "";
@@ -635,7 +649,7 @@ body {
 
 .post-card {
     width: 100%;
-    margin-top: 50px;
+    margin-top: 56px;
 }
 
 .post-card figure {
@@ -1699,7 +1713,7 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
     }
 
     .post-card {
-        margin-top: 55px;
+        margin-top: 56px;
     }
 
     .progressTriger,
