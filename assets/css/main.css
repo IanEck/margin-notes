@@ -1025,8 +1025,15 @@ figure.kg-card.kg-image-card.current .kg-image {
 .modal-close span::before {
     transform: rotate(-45deg);
 }
+
+.container .page-content-container .clear {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .page-about .page-content {
-    position: relative;
+    margin:auto;
 }
 .page-about .changable-image img {
     /* width: 374px;
