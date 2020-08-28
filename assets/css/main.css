@@ -604,6 +604,7 @@ body {
     background: linear-gradient(180deg, #FDFDFC 9.78%, #F9F5F3 88.51%);
     position: relative;
     z-index: 999;
+    overflow: auto;
 }
 
 .home-template .nav-bar,
@@ -802,9 +803,10 @@ body {
 }
 
 .contents-wrap h2 {
-    margin-top: 45px;
-    margin-bottom: 25px;
+    margin-top: 3em;
+    margin-bottom: 1.5em;
     align-items: center;
+    font-size: 2em;
 }
 
 .citation {
@@ -1771,7 +1773,7 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
     }
 
     .contents-wrap h2 {
-        margin-top: 15px;
+        margin-top: 3em;
     }
 
     .changable-image {
