@@ -2,6 +2,7 @@
 <html lang="{{@site.lang}}">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,9 +16,17 @@
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
+        <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KVLTT3M');</script>
+<!-- End Google Tag Manager -->
 </head>
 
 <body class="{{body_class}}">
+
     <div class="main d-flex">
         {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
         {{{body}}}
@@ -33,6 +42,10 @@
     
     {{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
     {{ghost_foot}}
+        <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KVLTT3M"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 </body>
 
 </html>
