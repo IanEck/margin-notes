@@ -41,7 +41,11 @@ Media modal
 Wiki Citation
 ===================
 
+    First iteration:
     In the last few years we’ve been surrounded by doppelgängers: the HBO rendition of Stephen King’s  <div class="citation"><a href="https://en.wikipedia.org/wiki/The_Outsiders"><u><i>The Outsiders</i></u></a></div>, Jordan Peele’s <div class="citation"><a href="https://en.wikipedia.org/wiki/Us"><u><i>Us</i></u></a></div>, and Paul Rudd’s <div class="citation"><a href="https://en.wikipedia.org/wiki/The_Outsiders"><u><i>Living with Yourself</i></u></a></div>, to name a few.
+    
+    Second iteration:
+    In the last few years we?ve been surrounded by doppelgängers: the HBO rendition of Stephen King?s <div class="citation"><a href="https://en.wikipedia.org/wiki/The_Outsiders" data-title="The Outsiders" data-content="The Outsiders is a coming-of-age novel by S. E. Hinton, first published in 1967 by Viking Press. Hinton was 15 when she started writing the novel but did most of the work when she was 16 and a junior in high school.[1] Hinton was 18 when the book was published.[2] The book details the conflict between two rival gangs divided by their socioeconomic status: the working-class 'greasers' and the upper-class 'Socs' (pronounced /?so???z/?short for Socials). The story is told in first-person perspective by teenage protagonist Ponyboy Curtis.">The Outsiders</a></div>, Jordan Peele?s <div class="citation"><a href="https://en.wikipedia.org/wiki/Us" data-title="Us" data-content="'America', 'US', 'USA', and 'United States of America' redirect here. For the landmass comprising North, Central, South America, and the Caribbean, see Americas. For other uses, see America (disambiguation), US (disambiguation), USA (disambiguation), and United States (disambiguation).">Us</a></div>, and Paul Rudd?s <div class="citation"><a href="https://en.wikipedia.org/wiki/Living_with_Yourself" data-title="Living with Yourself" data-content="Living with Yourself is an American comedy-drama web television series created by Timothy Greenberg that premiered on October 18, 2019, on Netflix.[1] It stars Paul Rudd and Aisling Bea. Rudd also serves as an executive producer, alongside Greenberg, Anthony Bregman, Jeff Stern, Tony Hernandez, Jonathan Dayton, Valerie Faris, and Jeffrey Blitz.">Living with Yourself</a></div>, to name a few.
 
 About page
 =============================
