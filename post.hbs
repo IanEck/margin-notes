@@ -230,7 +230,7 @@ into the {body} of the default.hbs template --}}
             if (scroll > position) {
                 //console.log('scrollDown');
 
-                if (scroll >= postEndPos ) {
+                {{!-- if (scroll >= postEndPos ) {
                     $("body").addClass("modal-shown");
                     modalInner.html(newsLetterContent);
                     modal.fadeIn();
@@ -238,7 +238,7 @@ into the {body} of the default.hbs template --}}
                     console.log(postsParentHeight);
                     console.log(postStartPos);
                     console.log(postEndPos)
-                }
+                } --}}
 
 
             } else {
