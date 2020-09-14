@@ -217,7 +217,7 @@ into the {body} of the default.hbs template --}}
                 ((elemTop <= docViewTop) && ((elemBottom - docViewTop) >= elemThreshold));
         }
 
-       var postsParentHeight = $(".post-content-wrapper").outerHeight();
+       var postsParentHeight = $(".post-content-wrapper").outerHeight(true);
        var postStartPos = $(".post-content-wrapper").offset().top;
        var postEndPos = (postsParentHeight + postStartPos) - $(window).height();
 
@@ -233,7 +233,11 @@ into the {body} of the default.hbs template --}}
                 if (scroll >= postEndPos ) {
                     $("body").addClass("modal-shown");
                     modalInner.html(newsLetterContent);
-                    modal.fadeIn()
+                    modal.fadeIn();
+                    console.log(scroll);
+                    console.log(postsParentHeight);
+                    console.log(postStartPos);
+                    console.log(postEndPos)
                 }
 
 
