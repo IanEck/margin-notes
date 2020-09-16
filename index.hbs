@@ -301,34 +301,44 @@ into the {body} of the default.hbs template --}}
             startProgress();
         }
 
-        TweenMax.to(marKer, 2, {
+        TweenMax.to(marKer, 1, {
             css: {
                 opacity: 1,
                 visibility: 'visible'
             },
-            delay: 1,
-            ease: Power3.easeOut
+            ease: Power2.easeOut,
+            delay: .5,
+            rotation: "180_cw"
         });
 
-        TweenMax.to(img, 1, {
+        TweenMax.to(img, .5, {
             scale: 1,
             alpha: 1,
-            ease: Power3.easeOut
+            ease: Power2.easeOut
         });
 
-        TweenMax.to(navbar, 1, {
+        TweenMax.to(navbar, .5, {
             x: 0,
             {{!-- delay: 1, --}}
-            ease: Cubic.easeInOut
+            ease: Power2.easeOut
         });
 
-        TweenMax.to(imgContainer, 1, {
+        {{!-- gsap.set(imgContainer, {transformOrigin: "50% 200%"}); --}}
+
+        {{!-- TweenMax.to(imgContainer, 1, {
             css: {
                 width: 50 + '%'
             },
-            {{!-- delay: 1, --}}
-            ease: Cubic.easeInOut
-        });
+            ease: Power2.easeOut
+        }); --}}
+
+        TweenMax.fromTo(imgContainer, .5, {
+            marginLeft: 100 + 'vw'
+        }, {
+            marginLeft: 50 + 'vw',
+            ease: Power2.easeOut
+        }
+        );
     })
 
 </script>

@@ -701,8 +701,14 @@ body {
 }
 
 .home-template .changable-image {
-    width: 100%;
+    margin-left: 100vw;
 }
+@media(max-width: 991px) {
+    .home-template .changable-image {
+    display: none;
+    }
+}
+        
 
 .changable-image img {
     width: 100%;
