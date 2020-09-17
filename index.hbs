@@ -14,9 +14,9 @@ into the {body} of the default.hbs template --}}
             <div class="post-items post-tab-items show item_1">
                 <div class="color-thief-output"></div>
                 {{> "loop"}}
-                <div class="loadmore">
+                {{!-- <div class="loadmore">
                     <a href="#">Load more</a>
-                </div>
+                </div> --}}
             </div>
             {{#get "posts" filter="featured:true" limit="all" as |featured|}}
             <div class="post-items post-tab-items item_2">

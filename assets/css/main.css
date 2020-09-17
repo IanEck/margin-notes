@@ -920,19 +920,19 @@ body {
 .citation a::before {
     content: "";
     display: inline-block;
-    opacity: 0;
+    opacity: 1;
     -webkit-transition: all .3s ease-in;
     -ms-transition: all .3s ease-in;
     transition: all .3s ease-in;
     border-bottom: 12px solid transparent;
-    border-left: 12px solid #111112;
+    border-left: 12px solid #d14962;
 }
 
 .citation.content-added a:hover::before {
     opacity: 1;
     visibility: visible;
     border-bottom: 12px solid transparent;
-    border-left: 12px solid #d14962;
+    border-left: 12px solid #111112;
 }
 
 .citationContent {
