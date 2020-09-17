@@ -306,37 +306,27 @@ into the {body} of the default.hbs template --}}
                 opacity: 1,
                 visibility: 'visible'
             },
-            ease: Power2.easeOut,
-            delay: .5,
-            rotation: "180_cw"
+            ease: Power3.easeOut,
+            delay: .7,
         });
 
-        TweenMax.to(img, .5, {
+        TweenMax.to(img, .7, {
             scale: 1,
             alpha: 1,
-            ease: Power2.easeOut
+            ease: Power3.easeOut
         });
 
-        TweenMax.to(navbar, .5, {
+        TweenMax.to(navbar, .7, {
             x: 0,
             {{!-- delay: 1, --}}
-            ease: Power2.easeOut
+            ease: Power3.easeOut
         });
 
-        {{!-- gsap.set(imgContainer, {transformOrigin: "50% 200%"}); --}}
-
-        {{!-- TweenMax.to(imgContainer, 1, {
-            css: {
-                width: 50 + '%'
-            },
-            ease: Power2.easeOut
-        }); --}}
-
-        TweenMax.fromTo(imgContainer, .5, {
+        TweenMax.fromTo(imgContainer, .7, {
             marginLeft: 100 + 'vw'
         }, {
             marginLeft: 50 + 'vw',
-            ease: Power2.easeOut
+            ease: Power3.easeOut
         }
         );
     })

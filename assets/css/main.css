@@ -521,6 +521,10 @@ body {
     pointer-events: none;
 }
 
+.home-template {
+    background-image: url("/Users/ianeck/code/local-margin-notes/content/themes/margin-notes/assets/img/flower phone.png");
+}
+
 .home-template .marker {
     opacity: 0;
     visibility: hidden;
@@ -748,10 +752,10 @@ body {
 
 .margin-triger:hover {
     background-color: #ededed;
-    -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    transform: translate(0, -2px);
+    transform: translateY(-3px);
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.15);
+    -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .margin-triger.active,
@@ -909,8 +913,8 @@ body {
 .citation a {
     color: #111112;
     position: relative;
-    font-style: italic;
     text-decoration: underline;
+    text-decoration-style: dotted;
 }
 
 .citation a::before {
@@ -920,33 +924,36 @@ body {
     -webkit-transition: all .3s ease-in;
     -ms-transition: all .3s ease-in;
     transition: all .3s ease-in;
-    border-bottom: 0px solid transparent;
-    border-left: 0px solid #111112;
+    border-bottom: 12px solid transparent;
+    border-left: 12px solid #111112;
 }
 
 .citation.content-added a:hover::before {
     opacity: 1;
     visibility: visible;
-    border-bottom: 15px solid transparent;
-    border-left: 15px solid #111112;
+    border-bottom: 12px solid transparent;
+    border-left: 12px solid #d14962;
 }
 
 .citationContent {
     position: absolute;
     left: 0;
-    width: 463px;
+    width: 500px;
     max-width: 100%;
     background-color: #ffffff;
-    padding: 40px 33px 35px;
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 24px 24px 24px;
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
     -webkit-transition: all .3s ease-in;
     -ms-transition: all .3s ease-in;
     transition: all .3s ease-in;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-115%);
+    transform: translateY(-110%);
+    font-size: 1rem;
+    line-height: 1.4rem;
 }
 
 .citation a:hover~.citationContent {
@@ -961,6 +968,7 @@ body {
 
 .citationContent .heading h3 {
     text-decoration: underline;
+    font-size: 1rem;
 }
 
 .wiki-logo {
@@ -1103,6 +1111,10 @@ background: linear-gradient(0deg, rgba(255,254,252,1) 0%, rgba(242,239,240,1) 10
     font-size: 16px;
     color: #D14962;
     font-family: 'knockouthtf51-middleweight';
+}
+
+hr {
+    border-top: 2px dotted #d14962;
 }
 
 blockquote {
@@ -1591,6 +1603,14 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
 
 
 /* Tag page */
+
+.tag-template {
+    background: linear-gradient(rgb(252, 252, 251) 0%, rgb(250, 248, 247) 100%)
+}
+
+.tag-template>.main {
+    background: transparent;
+}
 
 .tag-template .site-archive-header>.tag-header {
     padding-top: 55px;
