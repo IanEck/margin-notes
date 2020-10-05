@@ -5,7 +5,10 @@
     let allText = [];
 
     $(".citation").each(function(){
-        $(this).find('a').attr('target', '_blank');
+        $(this).find('a').click(function(e){
+          e.preventDefault();
+        })
+        //$(this).find('a').attr('target', '_blank');
         var text = $(this).find('a').html().replace(/ /g,"_");
         allText.push(text);
     });
@@ -15,18 +18,19 @@
 
         var content = $(".citation").eq(index).find("a").data("content");
         var title = $(".citation").eq(index).find("a").data("title"); 
+        var link = $(".citation").eq(index).find("a").attr("href"); 
         var wikiFavicon = $(".citation").eq(index).find("a").data("wiki-favicon");       
         var wikiTitle = $(".citation").eq(index).find("a").data("wiki-title");       
 
         var wikiIcon = wikiFavicon ? `<img class='wiki-logo' src='${wikiFavicon}' alt='Wiki logo' />` : '';
         var wtitle = wikiTitle ? `<i>${wikiTitle}</i>` : '';
 
-        if (content !== undefined || content !== ' ') {
-          //console.log(content)
+        if (content !== undefined || content !== '') {
+          console.log(link)
           $(".citation").eq(index).append(
-              "<div class='citationContent'><div class='heading d-flex'><h3>" +
+              "<div class='citationContent'><div class='heading d-flex'><h3> <a href='" + link + "' target='_blank'>" +
                 title +
-          "</h3>" + wikiIcon + wtitle + "</div>" +
+          "</a></h3>" + wikiIcon + wtitle + "</div>" +
                 content +
                 "</div>"
             ).addClass("content-added");
