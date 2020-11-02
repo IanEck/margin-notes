@@ -35,8 +35,69 @@
                 "</div>"
             ).addClass("content-added");
         }
-
     });
+
+    // Show the List of Paradoxes
+    // var paradoxes_list_url = 'https://api.are.na/v2/channels/margin-notes/contents';
+    // var getData = $.get(index, function(res){
+
+    // })
+
+
+
+    var listWrappper = $('.paradoxes-list');
+    var loading = $('#loading');
+    var btn = $("#loadMore");
+    var pageCounter = 1;
+
+    if(listWrappper.length){
+        // load first 8 items
+        fetch(`https://api.are.na/v2/channels/margin-notes/contents?page=${pageCounter}&amp;per=8`).then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          renderHtml(data.contents);
+          loading.hide();
+          btn.css({'display': 'block'});
+        }).catch(error => '!Ops some error')
+
+
+        // load more 8 items
+        btn.click(function(){
+          loading.show();
+          fetch(`https://api.are.na/v2/channels/margin-notes/contents?page=${pageCounter}&amp;per=8`).then((res) => res.json())
+          .then((data) => {
+            renderHtml(data.contents);
+            loading.hide();
+          }).catch(error => '!Ops some error')
+
+          pageCounter++;
+          
+        })
+
+        // Render html function
+        function renderHtml(data){
+          data.forEach((item) => {
+            let img = item.image ? item.image.display.url : '';
+            let user = item.user ? item.user.full_name : '';
+            let title = item.title ? item.title : '';
+            let link = item.source ? item.source.url : '';
+            let className = item.base_class;
+
+            listWrappper.append(`
+              <div class="item ${className}">
+                ${img ? `<img src="${img}">` : ''}
+                ${className === "Channel" ? `<h3>${title}</h3>` : ''}
+                <h6>${user}</h6>
+                ${item.source ? `<a class="link" href="${link}">
+                  <button>Connect →</button>
+                </a>` : ''}
+              </div>
+            `)
+          })
+          
+        }
+    }
+
 
     $(window).on('load', function () {
         $('body').addClass('loaded');

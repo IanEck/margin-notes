@@ -73,6 +73,17 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'WhyteInktrap Black';
+    src: url('../fonts/WhyteInktrap-Black.eot');
+    src: url('../fonts/WhyteInktrap-Black.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/WhyteInktrap-Black.woff2') format('woff2'),
+        url('../fonts/WhyteInktrap-Black.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 
 .post-card-title,
 .post-template h1,
@@ -1665,6 +1676,195 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
     max-width: 328px;
 }
 
+
+/* about page List of paradoxes */
+.page-about{
+    background: linear-gradient(180deg, #FCFCFB 0%, #FAF8F7 100%);
+}
+.paradoxes-list{
+    width: 100%;
+    margin-top: 55px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+
+.paradoxes-list .title-text{
+    display: block;
+    width: 100%;
+    font-size: 26px;
+    font-weight: bold;
+    font-family: 'WhyteInktrap Black';
+    white-space: nowrap;
+    padding: 28px 0;
+    border: 2px dotted #D14962;
+    border-right: 0;
+    border-left: 0;
+    margin-bottom: 13px;
+}
+
+#loading{
+    width: 100%;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.loading-inner{
+    margin: 0 auto;
+}
+
+.loading-inner img{
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.loading-inner span{
+    display: block;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+}
+
+#loadMore{
+    width: 120px;
+    padding: 8px 10px;
+    background-color: #ededed;
+    color: #111112;
+    text-align: center;
+    margin: 20px auto 50px;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+    cursor: pointer;
+    border: 0;
+    display: none;
+}
+
+#loadMore:hover,
+.paradoxes-list .item .link button:hover{
+    background-color: #D14962;
+    color: #FFFFFF;
+}
+
+.paradoxes-list .item .link button:active,
+.paradoxes-list .item .link button:focus,
+#loadMore:active,
+#loadMore:focus{
+    outline: none;
+}
+
+@media screen and (min-width: 992px) {
+    .paradoxes-list .title-text{
+        font-size: 3.688888888888889vw;
+    }
+}
+
+.paradoxes-list .item{
+    width: calc(50% - 35px);
+    margin: 58px 0 0;
+    padding: 12px;
+    position: relative;
+    -webkit-box-shadow: 0px 1.81px 18px 0px rgba(0,0,0,0.05); 
+    box-shadow: 0px 1.81px 18px 0px rgba(0,0,0,0.05);
+    background: #ffffff;
+    border-radius: 6.68px;
+    text-align: center;
+}
+
+.paradoxes-list .item.Channel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+.paradoxes-list .item .link{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    border-radius: 6.68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .3);
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.paradoxes-list .item:hover .link{
+    opacity: 1;
+    visibility: visible;
+}
+
+.paradoxes-list .item .link button{
+    background-color: #ededed;
+    color: #111112;
+    border: 0;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+    padding: 12px 20px;
+    width: 120px;
+    font-size: 16px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+
+.paradoxes-list .item:not(.Channel):before,
+.paradoxes-list .item:not(.Channel):after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.10); 
+    box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.10);
+    background: #ffffff;
+    transform: rotate(4.33deg);
+    z-index: -1;
+    border-radius: 6.68px;
+}
+
+.paradoxes-list .item:not(.Channel):before{
+    transform: rotate(10.25deg);
+}
+
+.paradoxes-list .item img{
+    max-width: 100%;
+    max-height: 168px;
+    display: block;
+    margin: 0 auto;
+}
+
+.paradoxes-list .item h3{
+    font-size: 22px;
+    color: #000;
+}
+
+.paradoxes-list .item h6{
+    display: block;
+    width: 100%;
+    padding: 12px 0px 8px;
+    font-size: 14px;
+    color: rgba(16, 17, 17, 0.8);
+    text-align: center;
+}
+
+
 @keyframes slide {
     0% {
         opacity: 0;
@@ -2019,8 +2219,26 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
         margin-top: 15px;
         font-size: 1.125rem;
     }
+    .post-content-wrapper .newsletter{
+        max-width: 100%;
+    }
     .email-wrap input{
-        width: 100%;
+        width: 60%;
+        padding: 0 10px;
+    }
+
+    .email-wrap input[type="email"]{
+        width: 40%;
+    }
+
+
+    /* about page Building Blocks style */
+    .paradoxes-list{
+        justify-content: center;
+        margin-top: 25px;
+    }
+    .paradoxes-list .item{
+        width: calc(100% - 40px);
     }
 }
 
@@ -2038,6 +2256,14 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
         margin-left: 0;
         margin-right: 0;
         max-width: 100%;
+    }
+
+    /* about page Building Blocks style */
+    .paradoxes-list{
+        justify-content: space-between;
+    }
+    .paradoxes-list .item{
+        width: calc(50% - 35px);
     }
 }
 
@@ -2099,8 +2325,8 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
 
     .post-content-wrapper,
     .post-lead {
-        padding-left: 30px;
-        padding-right: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
         height: auto;
     }
 
