@@ -83,16 +83,17 @@
             let link = item.source ? item.source.url : '';
             let className = item.base_class;
 
+            // var original = title; 
+            // var convertedTitle = original.substr(original.indexOf(" ") + 1); // removing first word from string
+
             listWrappper.append(`
               <div class="item ${className}">
                 ${img ? `<img src="${img}">` : ''}
                 ${className === "Channel" ? `<h3>${title}</h3>` : ''}
                 <h6>${user}</h6>
-                ${item.source ? `<a class="link" href="${link}">
-                  <button>Connect →</button>
-                </a>` : ''}
+                <a class="link" target="_blank" href="https://www.are.na/block/9269117"> <button>Connect →</button></a>
               </div>
-            `)
+            `);
           })
           
         }
@@ -128,11 +129,13 @@ window.addEventListener("DOMContentLoaded", function () {
 
   // handle the form submission event
 
-  form.addEventListener("submit", function (ev) {
-    ev.preventDefault();
-    var data = new FormData(form);
-    ajax(form.method, form.action, data, success, error);
-  });
+  if(form){
+    form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      var data = new FormData(form);
+      ajax(form.method, form.action, data, success, error);
+    });
+  }
 });
 
 // helper function for sending an AJAX request
