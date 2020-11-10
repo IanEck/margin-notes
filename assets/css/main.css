@@ -1276,6 +1276,7 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
     margin-top: 0;
 }
 
+#loadMore,
 .loadmore a {
     color: #D14962;
     font-size: 1.125rem;
@@ -1732,10 +1733,10 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
 }
 
 #loadMore{
-    width: 120px;
+    width: auto;
     padding: 8px 10px;
-    background-color: #ededed;
-    color: #111112;
+    background-color: transparent;
+    font-family: 'knockouthtf51-middleweight';
     text-align: center;
     margin: 20px auto 50px;
     -webkit-transition: all .3s ease;
@@ -1746,10 +1747,10 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
     display: none;
 }
 
+.loadmore a:hover,
 #loadMore:hover,
 .paradoxes-list .item .link button:hover{
-    background-color: #D14962;
-    color: #FFFFFF;
+    opacity: .7;
 }
 
 .paradoxes-list .item .link button:active,
@@ -1823,8 +1824,8 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
 }
 
 
-.paradoxes-list .item:not(.Channel):before,
-.paradoxes-list .item:not(.Channel):after{
+.paradoxes-list .item:not(.Block):before,
+.paradoxes-list .item:not(.Block):after{
     content: "";
     width: 100%;
     height: 100%;
@@ -1839,7 +1840,7 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
     border-radius: 6.68px;
 }
 
-.paradoxes-list .item:not(.Channel):before{
+.paradoxes-list .item:not(.Block):before{
     transform: rotate(10.25deg);
 }
 
@@ -1862,6 +1863,8 @@ article.post-card.post.tag-type.tag-words:first-child .post-card-image-link img 
     font-size: 14px;
     color: rgba(16, 17, 17, 0.8);
     text-align: center;
+    font-family: 'knockouthtf51-middleweight';
+    font-size: 14px;
 }
 
 
